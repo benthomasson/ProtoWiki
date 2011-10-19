@@ -23,3 +23,12 @@ To clean up the html:
 
     :!fab clean
 
+To commit/push the changes:
+
+    :!fab save:comment="New changes!"
+
+
+To pull new changes:
+    
+    :!fab pull
+

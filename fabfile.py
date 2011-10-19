@@ -14,6 +14,7 @@ def ls():
 
 def save(comment):
     local('git commit -a -m "{0}"'.format(comment))
+    local('git pull --rebase')
     local('git push')
 
 def push():
