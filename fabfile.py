@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from fabric.api import local
+from fabric.api import local, settings
 
 from glob import glob
 import os
@@ -23,7 +23,8 @@ def push():
 def pull():
     local('git stash')
     local('git pull --rebase')
-    local('git stash apply')
+    with settings(warn_only=True):
+        local('git stash apply')
 
 def status():
     local('git status')
