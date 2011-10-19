@@ -8,11 +8,18 @@ Use gf to open a ProtoWiki page.
 Add this to your .vimrc file::
 
     :map gf :e <cfile><CR>
-    :command UpdateIndex r!ls | grep -v html | grep -v .py
+    :command UpdateIndex r!ls | grep -v html 
 
 
 To update the Index do this::
 
     :UpdateIndex
 
+To build restructured text HTML files from your wiki files:
+
+    :!fab build
+
+To clean up the html:
+
+    :!fab clean
 

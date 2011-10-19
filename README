@@ -1,7 +1,9 @@
 
 
 This directory contains a ProtoWiki.  Open ProtoWiki or in vim move
-the cursor over ProtoWiki and type gf in normal mode.
+the cursor over ProtoWiki and type "gf" in normal mode.
 
 
-
+ProtoWiki is a combination of Vim, Fabric, reStructured Text, and github.  Only 
+Vim is required for basic operation, but if you have all the tools you
+get HTML generation, source control, and simple CLI commands.

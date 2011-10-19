@@ -12,6 +12,18 @@ def ls():
         f = os.path.abspath(f)
         print f
 
+def save(comment):
+    local('git commit -a -m "{0}"'.format(comment))
+    local('git push')
+
+def push():
+    local('git push')
+
+def pull():
+    local('git pull --rebase')
+
+def status():
+    local('git status')
 
 def clean():
     for f in glob('*.html'):
