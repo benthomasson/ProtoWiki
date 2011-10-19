@@ -14,14 +14,16 @@ def ls():
 
 def save(comment):
     local('git commit -a -m "{0}"'.format(comment))
-    local('git pull --rebase')
-    local('git push')
+    push()
 
 def push():
+    pull()
     local('git push')
 
 def pull():
+    local('git stash')
     local('git pull --rebase')
+    local('git stash apply')
 
 def status():
     local('git status')
