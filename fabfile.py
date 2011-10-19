@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+
+from fabric.api import local
+
+from glob import glob
+import os
+from subprocess import Popen
+
+
+def ls():
+    for f in glob('*'):
+        f = os.path.abspath(f)
+        print f
+
+
+def clean():
+    for f in glob('*.html'):
+        f = os.path.abspath(f)
+        local('rm {0}'.format(f))
+
+
+def build():
+    for f in glob('*'):
+        if f.endswith('.py'): continue
+        f = os.path.abspath(f)
+        out = f + ".html"
+        print f, out
+        local('rst2html.py %s %s' % (f, out))
+
+

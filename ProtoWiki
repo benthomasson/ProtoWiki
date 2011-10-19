@@ -1,0 +1,18 @@
+
+=========
+ProtoWiki
+=========
+
+Use gf to open a ProtoWiki page.
+
+Add this to your .vimrc file::
+
+    :map gf :e <cfile><CR>
+    :command UpdateIndex r!ls | grep -v html | grep -v .py
+
+
+To update the Index do this::
+
+    :UpdateIndex
+
+
