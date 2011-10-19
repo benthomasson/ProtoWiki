@@ -21,10 +21,7 @@ def push():
     local('git push')
 
 def pull():
-    local('git stash')
     local('git pull --rebase')
-    with settings(warn_only=True):
-        local('git stash apply')
 
 def status():
     local('git status')
